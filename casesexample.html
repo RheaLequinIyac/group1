@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Philippine Data Privacy Act of 2012</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding-top: 150px; /* For sticky header */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        /* Sticky header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #003f5c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* Section styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .section-content {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 60%;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 15px;
+        }
+
+        .modal-content ul {
+            padding-left: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #003f5c;
+        }
+
+        .references-link {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #003f5c;
+            cursor: pointer;
+        }
+
+        .references-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #003f5c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h2>Web<span>Weaver</span></h2>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="web.html">Main page</a>
+            <a href="#references" onclick="openReferences()">References</a>
+            
+        </nav>
+    </header>
+
+<header>
+    <h1>Philippine Data Privacy Act of 2012</h1>
+    <p>Protecting Your Privacy and Personal Information</p>
+</header>
+
+<div class="container" id="content">
+    <div class="section-content">
+        <h2>What is the Data Privacy Act?</h2>
+        <p>The Philippine Data Privacy Act of 2012 (Republic Act No. 10173) is designed to protect individuals' personal information by regulating how personal data is collected, stored, processed, and shared. It ensures that individuals’ privacy rights are respected and that personal data is securely handled.</p>
+    </div>
+
+    <div class="section-content">
+        <h2>Key Provisions</h2>
+        <ul>
+            <li><strong>Data Subject Rights:</strong> Individuals can access, correct, and erase their personal data.</li>
+            <li><strong>Data Processing:</strong> Personal data must be processed lawfully and fairly.</li>
+            <li><strong>Security Measures:</strong> Organizations must implement proper security measures to safeguard personal data.</li>
+            <li><strong>Penalties:</strong> Violations may result in fines and imprisonment.</li>
+        </ul>
+    </div>
+
+    <div class="section-content">
+        <h2>The Role of the National Privacy Commission (NPC)</h2>
+        <p>The NPC is responsible for enforcing the provisions of the Data Privacy Act. It ensures compliance, conducts investigations, and imposes penalties for violations. It also provides guidance and education on best practices for data protection.</p>
+    </div>
+
+    <div class="section-content">
+        <h2>Implementing Rules and Regulations (IRR)</h2>
+        <p>The IRR provides actionable guidelines to help organizations comply with the Data Privacy Act. It covers consent management, data sharing, security protocols, and accountability within organizations.</p>
+    </div>
+
+    <div class="section-content">
+        <h2>Case Example: A Data Breach in a Health Organization</h2>
+        <p><strong>Background:</strong> A health maintenance organization (HMO) in the Philippines experiences a data breach when an employee mistakenly sends an email with sensitive patient data to the wrong recipient. This results in the unauthorized exposure of the personal health information (PHI) of hundreds of members.</p>
+        <p><strong>Steps in the Case:</strong></p>
+        <ul>
+            <li><strong>Initial Detection:</strong> The HMO’s data protection officer (DPO) is alerted about the unintended email, and the DPO begins investigating the breach.</li>
+            <li><strong>Compliance with the Data Privacy Act:</strong>
+                <ul>
+                    <li><strong>Notification to Data Subjects:</strong> The affected individuals are notified of the breach and the steps they should take to protect themselves.</li>
+                    <li><strong>Report to NPC:</strong> The HMO reports the breach to the NPC, as required by the law.</li>
+                </ul>
+            </li>
+            <li><strong>Investigation and Remediation:</strong> The NPC conducts an investigation and the HMO implements new security measures and staff training.</li>
+            <li><strong>Enforcement Actions:</strong> Depending on the outcome of the NPC investigation, penalties may be imposed for non-compliance, such as fines or corrective actions.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="references-link" id="referencesButton">View References</div>
+
+<div class="modal" id="referencesModal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://privacy.gov.ph/" target="_blank">National Privacy Commission</a></li>
+            <li><a href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/" target="_blank">Republic Act No. 10173</a></li>
+            <li><a href="https://www.ncsc.gov.ph/" target="_blank">National Cybersecurity Plan</a></li>
+            <li>Case Studies: Breaches and Best Practices</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Philippine Data Privacy Act. All Rights Reserved. | <a href="https://privacy.gov.ph/" target="_blank">National Privacy Commission</a>
+</footer>
+
+<script>
+    const modal = document.getElementById('referencesModal');
+    const openButton = document.getElementById('referencesButton');
+    const closeButton = document.getElementById('closeModal');
+
+    openButton.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

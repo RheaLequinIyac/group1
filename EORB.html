@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Oversight and Enforcement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 100px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            color: rgb(224, 55, 70);
+            text-align: center;
+        }
+        p{
+            font-family: sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: rgb(224, 55, 70);
+            margin-bottom: 20px;
+        }
+
+        .role-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .role-list li {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(68, 16, 16, 0.1);
+            cursor: pointer;
+        }
+
+        .role-list li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .role-details {
+            display: none;
+            background-color: #e9f7e9;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: rgb(224, 55, 70);
+            text-decoration: none;
+            font: 600;
+        }
+
+        .contact-info {
+            background-color: rgb(224, 55, 70);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .references {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Privacy Oversight and Enforcement</h1>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>Introduction to Privacy Enforcement</h2>
+        <p>Regulatory bodies like the National Privacy Commission (NPC) in the Philippines ensure that privacy laws are followed. They play a key role in bridging the gap between legislation and practice, monitoring compliance, investigating breaches, and enforcing sanctions to protect personal data.</p>
+    </section>
+
+    <section>
+        <h2>Key Roles of Regulatory Bodies</h2>
+        <ul class="role-list">
+            <li onclick="toggleDetails('compliance')">1. Monitoring Compliance</li>
+            <div id="compliance" class="role-details">
+                <p>Regulatory bodies track how organizations collect, store, and manage personal data, ensuring they comply with privacy laws.</p>
+            </div>
+
+            <li onclick="toggleDetails('investigation')">2. Investigating Breaches</li>
+            <div id="investigation" class="role-details">
+                <p>When data breaches or violations occur, regulatory bodies investigate the causes, impacts, and whether protocols were followed.</p>
+            </div>
+
+            <li onclick="toggleDetails('sanctions')">3. Imposing Sanctions</li>
+            <div id="sanctions" class="role-details">
+                <p>Regulatory bodies impose sanctions for non-compliance, including fines, orders for corrections, or suspension of operations in extreme cases.</p>
+            </div>
+        </ul>
+    </section>
+
+    <section>
+        <h2>The Importance of Enforcement and Oversight</h2>
+        <p>Enforcement and oversight ensure that privacy laws are not just theoretical but actively followed. Without such mechanisms, organizations may not prioritize data protection, leading to risks of misuse and loss of trust.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Privacy Oversight. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <div class="references">
+        <p>References:</p>
+        <ul>
+            <li><a href="https://www.privacy.gov.ph/" target="_blank">National Privacy Commission (NPC)</a></li>
+            <li><a href="https://www.privacy.gov.ph/data-privacy-act/" target="_blank">Data Privacy Act of 2012</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    function toggleDetails(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none" || element.style.display === "") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

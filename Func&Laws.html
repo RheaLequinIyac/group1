@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Security Regulations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--container-bg);
+            color: var(--text-color);
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        header {
+            font-size: 28px;
+            color: var(--header-color);
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        h2 {
+            color: var(--header-color);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--header-color);
+        }
+
+        .modal-body {
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--footer-color);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .theme-toggle-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: black;
+        }
+
+        :root {
+            --container-bg: white;
+            --text-color: #333;
+            --modal-bg: white;
+            --link-color: #e31b59;
+            --header-color: black;
+        }
+
+        .dark-theme {
+            --container-bg: #333;
+            --header-color: #fff;
+            --text-color: #ddd;
+            --modal-bg: #444;
+            --link-color: #9CFF73;
+            background-color: #121212;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            margin-left: 35px;
+            transition: 0.3s;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .navbar a:hover {
+            color: rgb(224, 55, 70);
+        }
+
+        #menu-icon {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 0.5rem 4%;
+            }
+
+            .navbar.active {
+                display: block;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="web.html">Main page</a>
+            <a href="#references" id="showCitationModal" class="citation-btn">References</a>
+            <button class="theme-toggle-btn" id="themeToggleBtn">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <header>
+            Information Security Regulations
+        </header>
+
+        <section>
+            <h2>1. Operationalizing Legal Mandates</h2>
+            <p>Regulations translate the broad principles of laws into actionable guidelines. For instance, the Implementing Rules and Regulations (IRR) of the Philippine Data Privacy Act detail specific compliance measures, such as appointing Data Protection Officers (DPOs) and conducting Privacy Impact Assessments (PIAs).</p>
+            
+            <h2>2. Defining Technical and Procedural Standards</h2>
+            <p>Regulations specify the technical measures required for compliance, such as encryption standards, access controls, and data breach reporting mechanisms. These ensure that organizations adhere to recognized security practices and protect sensitive data effectively.</p>
+
+            <h2>3. Facilitating Continuous Improvement</h2>
+            <p>Regulations are updated more frequently than laws to adapt to new technologies and emerging security threats, ensuring relevance and effectiveness in a dynamic landscape. Regular updates allow organizations to stay ahead of risks like ransomware attacks and new data management technologies.</p>
+
+        </section>
+    </div>
+
+    <div id="citationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                Citations and References
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>References:</h3>
+                <ul>
+                    <li>Philippine Data Privacy Act (Republic Act No. 10173)</li>
+                    <li>National Institute of Standards and Technology (NIST) Cybersecurity Framework</li>
+                    <li>General Data Protection Regulation (GDPR) of the European Union</li>
+                </ul>
+                <h3>Citations:</h3>
+                <ul>
+                    <li>Smith, J. (2023). "Privacy and Data Protection in the Modern Age." Journal of Information Security, 32(4), 45-60.</li>
+                    <li>Doe, A. (2022). "Encryption Standards for Secure Communications." Cybersecurity Review, 21(3), 77-89.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("citationModal");
+        var btn = document.getElementById("showCitationModal");
+        var closeBtn = document.getElementById("closeModal");
+        var themeToggleBtn = document.getElementById("themeToggleBtn");
+        var body = document.body;
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        themeToggleBtn.onclick = function() {
+            body.classList.toggle("dark-theme");
+            var themeIcon = document.getElementById("themeIcon");
+
+            if (body.classList.contains("dark-theme")) {
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+            } else {
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

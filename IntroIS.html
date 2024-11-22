@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Security & Legal Frameworks</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      
+        body {
+            font-family: 'Arial', sans-serif;
+           background-color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 70px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        span{
+           color: rgb(224, 55, 70);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            padding: 35px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            color: white;
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            
+        }
+
+        section p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: rgb(224, 55, 70);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: left;
+            overflow-y: auto;
+            max-height: 80%;
+        }
+
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-content a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .modal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .modal-content button {
+            background-color: rgb(224, 55, 70);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            nav {
+                top: 20px;
+            }
+        }
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+i{
+    font-size: var(--font-size-md);
+}
+.container{
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.place-items-center{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section:not(.featured-articles){
+    padding-block: 5rem;
+}
+
+.d-grid{
+    display: grid;
+}
+
+.screen-sm-hidden{
+    display: none;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  .header:hover::before {
+    left: 100%;
+  }
+  .logo {
+    border-radius: 50%;
+    height: 70px;
+  }
+  .navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+    font-family: "Poppins", sans-serif;
+  }
+  .navbar a:hover {
+    color: rgb(224, 55, 70);
+  }
+  #menu-icon {
+    font-size: 36px;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+  }
+ 
+  @media (max-width: 992px) {
+    .header {
+      padding: 1.25rem 4%;
+    }
+  }
+  @media (max-width: 768px) {
+    #menu-icon {
+      display: block;
+    }
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem 4%;
+      display: none;
+      background: rgba(255, 255, 255, 0.1);
+     
+    }
+    .navbar.active {
+      display: block;
+    }
+    .navbar a {
+      display: block;
+      margin: 1.5rem 0;
+    }
+  }
+
+
+    </style>
+</head>
+<body>
+        <header class="header">
+            <h2>Web<span>Weaver</span></h2>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="web.html">Main page</a>
+                <a href="#references" onclick="openReferences()">References</a>
+                
+            </nav>
+        </header>
+<header>
+    <h1>Information Security & Legal Frameworks</h1>
+</header>
+<section id="intro">
+    <h2>Introduction</h2>
+    <p>Information security is a critical concern in today's digital age, as it ensures the confidentiality, integrity, and availability of sensitive data. With the rapid expansion of digital technology, the amount of data being generated, stored, and transmitted globally has grown exponentially, making it a prime target for cyberattacks, theft, and unauthorized access. In this environment, information security laws and regulations play a pivotal role in establishing frameworks that protect personal, corporate, and government data, penalize violations, and enforce compliance.</p>
+    
+    <p>Laws related to information security define the legal boundaries and obligations for both organizations and individuals in protecting sensitive data. They outline the rights of data subjects, the responsibilities of data controllers and processors, and the penalties for non-compliance. Regulations, often formulated by government agencies or other regulatory bodies, provide specific guidelines and technical standards that help implement the broader objectives outlined in these laws.</p>
+    
+    <p>This report explores the functions of these legal instruments and the synergy between laws and regulations in protecting sensitive data. By examining both the foundational legal principles and the regulatory mechanisms that support them, we can better understand how the intersection of law and technology is essential for safeguarding information in a rapidly evolving digital landscape.</p>
+</section>
+
+<div class="modal" id="referencesModal">
+    <div class="modal-content">
+        <h3>Citations and References</h3>
+        <ul>
+            <li><a href="https://www.privacyinternational.org/" target="_blank">Privacy International: Privacy Laws</a></li>
+            <li><a href="https://gdpr.eu/" target="_blank">General Data Protection Regulation (GDPR)</a></li>
+            <li><a href="https://www.cisa.gov/" target="_blank">Cybersecurity and Infrastructure Security Agency (CISA)</a></li>
+            <li><a href="https://www.nist.gov/cybersecurity" target="_blank">National Institute of Standards and Technology (NIST) Cybersecurity Framework</a></li>
+        </ul>
+        <button onclick="closeReferences()">Close</button>
+    </div>
+</div>
+
+<footer id="footer">
+    <p>&copy; 2024 Information Security Law Report</p>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+</footer>
+
+<script>
+
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    function openReferences() {
+        document.getElementById('referencesModal').style.display = 'flex';
+    }
+
+    function closeReferences() {
+        document.getElementById('referencesModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
